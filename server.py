@@ -18,7 +18,7 @@ def get_film_id(title):
     title = title.replace(" ", "_")
     print "http://v2.sg.media-imdb.com/suggests/" + title[0] + "/" + title[0:20] + ".json"
     r = requests.get("http://v2.sg.media-imdb.com/suggests/" + title[0] + "/" + title[0:20] + ".json")
-    print json.loads(r.text.split("(", 1)[1][:-1])["d"][0]["id"]
+    return json.loads(r.text.split("(", 1)[1][:-1])["d"][0]["id"]
 
 def get_film_list():
     r = requests.get("http://x.newshebdo.ugc.fr/ats/msg.aspx?sg1=afd7c7ac43982abdda8598b07d5600b5")

@@ -19,7 +19,7 @@
             } else {
                 $("#film" + index).css( "background-color", "transparent")
             }
-            $("#film" + index + " #poster_img").attr("src",film["Poster"].replace("http://ia.media-imdb.com", "https://images-na.ssl-images-amazon.com");
+            $("#film" + index + " #poster_img").attr("src",film["Poster"].replace("http://ia.media-imdb.com", "https://images-na.ssl-images-amazon.com"));
             $("#film" + index + " #title_link").attr("href", "http://imdb.com/title/"+film["ImdbID"]);
             $("#film" + index + " #title_title").text(film["Title"]);
             $("#film" + index + " #released").text(film["Released"]);
