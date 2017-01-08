@@ -1,5 +1,6 @@
 import numpy
 from sklearn.neighbors import KNeighborsClassifier, NearestNeighbors
+from math import ceil
 
 
 def load_films():
@@ -76,13 +77,13 @@ def compute(films, directors, actors, genres, writers, rateds, liked, number_of_
     # print vectors[0:10]
     X = numpy.array(vectors[:-number_of_films_to_check])
     y = numpy.array(liked[:-number_of_films_to_check])
-    print "number of neighbors", 0.1*len(vectors[:-number_of_films_to_check])
-    nbrs = KNeighborsClassifier(n_neighbors=0.1*len(vectors[:-number_of_films_to_check]), weights="distance", algorithm='auto').fit(X, y)
+    print "number of neighbors", ceil(0.1*len(vectors[:-number_of_films_to_check]))
+    nbrs = KNeighborsClassifier(n_neighbors=ceil(0.1*len(vectors[:-number_of_films_to_check])), weights="distance", algorithm='auto').fit(X, y)
     print nbrs.predict(numpy.array(vectors[-number_of_films_to_check:]))
 
     #exit()
     X = numpy.array(vectors)
-    nbrs1 = NearestNeighbors(n_neighbors=0.1*len(vectors[:-number_of_films_to_check]), algorithm='auto').fit(X)
+    nbrs1 = NearestNeighbors(n_neighbors=ceil(0.1*len(vectors[:-number_of_films_to_check])), algorithm='auto').fit(X)
     distances, indices = nbrs1.kneighbors(numpy.array(vectors[-number_of_films_to_check:]))
     print distances
     print indices

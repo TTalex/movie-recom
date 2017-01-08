@@ -27,8 +27,10 @@
                 $("#film" + i + " #plot").text(film["Plot"]);
                 $("#film" + i + " .stats .left").css("width", data.results1[i][0] * 100);
                 $("#film" + i + " .stats .right").css("width", data.results1[i][1] * 100);
-                $("#film" + i + " .stats1 .left").css("width", data.results2[i][0] * 100);
-                $("#film" + i + " .stats1 .right").css("width", data.results2[i][1] * 100);
+                if(data.results2[i]){
+                    $("#film" + i + " .stats1 .left").css("width", data.results2[i][0] * 100);
+                    $("#film" + i + " .stats1 .right").css("width", data.results2[i][1] * 100);
+                }
             }
         });
     });
