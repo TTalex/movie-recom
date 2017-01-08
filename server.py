@@ -62,7 +62,7 @@ def learn():
     print "len(liked2)", len(liked2)
     filtered_films = [f for (i,f) in enumerate(films) if liked[i] != 0]
     filtered_liked = filter(lambda l: l != 0, liked)
-    results1 = compute(filtered_films, directors, actors, genres, writers, rateds, filtered_liked, 6)
+    results1 = compute(filtered_films, directors, actors, genres, writers, rateds, filtered_liked, len(films_list))
     if liked2:
         filtered_films = [f for (i,f) in enumerate(films) if liked2[i] != 0]
         filtered_liked = filter(lambda l: l != 0, liked2)

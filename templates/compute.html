@@ -16,7 +16,7 @@
             for (i = 0; i < data.films.length; i = i + 1){
                 film = data.films[i]
                 $("#main").append('<div  class="film" id="film' + i + '"><div id="poster"><img id="poster_img" src="" />            </div>            <div id="info">               <div id="title">                    <a id="title_link" href="">                        <div id="title_title"></div>                    </a>                </div>                <div id=released">                </div>                <div id="rating">                </div>                <div id="genre">                </div>                <div id="directors"class="names">                </div>                <div id="actors" class="names">                </div>                <div id="plot"></div> <div class="stats"><div class="left"></div><div class="right"></div></div>  <div class="stats1"><div class="left"></div><div class="right"></div></div>          </div></div>');
-                $("#film" + i + " #poster_img").attr("src",film["Poster"]);
+                $("#film" + i + " #poster_img").attr("src",film["Poster"].replace("http://ia.media-imdb.com", "https://images-na.ssl-images-amazon.com"));
                 $("#film" + i + " #title_link").attr("href", "http://imdb.com/title/"+film["imdbID"]);
                 $("#film" + i + " #title_title").text(film["Title"]);
                 $("#film" + i + " #released").text(film["Released"]);
