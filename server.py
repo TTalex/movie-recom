@@ -14,10 +14,11 @@ def get_film_data(imdb_id):
     return film
 
 def get_film_id(title):
-    r = requests.get("http://www.imdb.com/find?s=all&q=" + title)
-    m = re.search("/title/([^/]*)/", r.text)
-    if m:
-        return m.group(1)
+    title = title.lower()
+    title = title.replace(" ", "_")
+    print "http://v2.sg.media-imdb.com/suggests/" + title[0] + "/" + title[0:20] + ".json"
+    r = requests.get("http://v2.sg.media-imdb.com/suggests/" + title[0] + "/" + title[0:20] + ".json")
+    print json.loads(r.text.split("(", 1)[1][:-1])["d"][0]["id"]
 
 def get_film_list():
     r = requests.get("http://x.newshebdo.ugc.fr/ats/msg.aspx?sg1=afd7c7ac43982abdda8598b07d5600b5")
@@ -61,7 +62,7 @@ def learn():
     print "len(liked2)", len(liked2)
     filtered_films = [f for (i,f) in enumerate(films) if liked[i] != 0]
     filtered_liked = filter(lambda l: l != 0, liked)
-    results1 = compute(filtered_films, directors, actors, genres, writers, rateds, filtered_liked, 1)
+    results1 = compute(filtered_films, directors, actors, genres, writers, rateds, filtered_liked, 6)
     if liked2:
         filtered_films = [f for (i,f) in enumerate(films) if liked2[i] != 0]
         filtered_liked = filter(lambda l: l != 0, liked2)
