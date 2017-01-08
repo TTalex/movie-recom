@@ -1,5 +1,5 @@
 def load_films():
-    file = open("seeds.rb", "r")
+    file = open("seeds.data", "r")
     films = []
     for line in file:
         if line[0:4] == "Film":
