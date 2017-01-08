@@ -1,3 +1,7 @@
+import numpy
+from sklearn.neighbors import KNeighborsClassifier, NearestNeighbors
+
+
 def load_films():
     file = open("seeds.data", "r")
     films = []
@@ -70,8 +74,6 @@ def compute(films, directors, actors, genres, writers, rateds, liked, number_of_
             vector[start + rateds[rated]] = 0.7
         vectors.append(vector)
     # print vectors[0:10]
-    import numpy
-    from sklearn.neighbors import KNeighborsClassifier
     X = numpy.array(vectors[:-number_of_films_to_check])
     y = numpy.array(liked[:-number_of_films_to_check])
     print "number of neighbors", 0.1*len(vectors[:-number_of_films_to_check])
@@ -80,7 +82,6 @@ def compute(films, directors, actors, genres, writers, rateds, liked, number_of_
 
     #exit()
     X = numpy.array(vectors)
-    from sklearn.neighbors import NearestNeighbors
     nbrs1 = NearestNeighbors(n_neighbors=0.1*len(vectors[:-number_of_films_to_check]), algorithm='auto').fit(X)
     distances, indices = nbrs1.kneighbors(numpy.array(vectors[-number_of_films_to_check:]))
     print distances
