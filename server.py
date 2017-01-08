@@ -87,4 +87,4 @@ def add_numbers():
 def css():
     return app.send_static_file('main.css')
 if __name__ == "__main__":
-    app.run()
+    app.run("0.0.0.0")
