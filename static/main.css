@@ -1,0 +1,104 @@
+#all{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;	
+
+}
+#header{
+	background: grey;
+}
+#header form{
+	display: inline-block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#main{
+	position: relative;
+}
+body {
+    text-align: center;
+}
+.filmseen {
+    color: grey;
+}
+.filmseen a{
+    color: grey;
+}
+.filmseen img{
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+}
+.film { 
+    width: 28%;
+    height: 400px;
+    float: left;
+    text-align: center; 
+    margin-left: 4%;
+}
+.film #title{ 
+    font-size: 20px; 
+}
+.film #released{ 
+    font-size: 10px; 
+    color: grey;
+}
+.film #poster { 
+    height: 150px; 
+    margin: auto;
+}
+.film #info { 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.film #plot {
+    overflow:hidden;
+    margin: 5px;
+}
+img {
+    height: 100%;
+}
+
+.names{
+    font-size: 12px;
+}
+input {
+    width: 500px;
+    height: 200px;
+    font-size: 80px;
+}
+.stats {
+    width: 100px;
+    margin: auto;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.stats .right {
+    height: 10px;
+    float: left;
+    background-color: rgba(255, 97, 97, 0.8);
+}
+.stats .left {
+    height: 10px;
+    float: left;
+    background-color: rgba(97, 255, 97, 0.8);
+}
+.stats1 {
+    width: 100px;
+    margin: auto;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.stats1 .right {
+    height: 10px;
+    float: left;
+    background-color: rgba(255, 97, 97, 0.8);
+    margin-top: 5px;
+}
+.stats1 .left {
+    height: 10px;
+    float: left;
+    background-color: rgba(97, 255, 97, 0.8);
+    margin-top: 5px;
+}
