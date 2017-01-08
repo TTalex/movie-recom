@@ -3,6 +3,7 @@ from main import compute, load_films, extract_vector_features
 import json
 import requests
 import re
+import os
 
 
 def get_film_data(imdb_id):
@@ -87,4 +88,5 @@ def add_numbers():
 def css():
     return app.send_static_file('main.css')
 if __name__ == "__main__":
-    app.run("0.0.0.0")
+    port = int(os.environ.get('PORT', 5000))
+    app.run("0.0.0.0", port=port)
