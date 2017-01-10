@@ -63,12 +63,12 @@ def learn():
     filtered_films = [f for (i,f) in enumerate(films) if liked[i] != 0]
     filtered_liked = filter(lambda l: l != 0, liked)
     results1 = compute(filtered_films, directors, actors, genres, writers, rateds, filtered_liked, len(films_list))
-    if liked2:
-        filtered_films = [f for (i,f) in enumerate(films) if liked2[i] != 0]
-        filtered_liked = filter(lambda l: l != 0, liked2)
-        results2 = compute(filtered_films, directors, actors, genres, writers, rateds, filtered_liked, len(films_list))
-    else:
-        results2 = []
+    #if liked2:
+    #    filtered_films = [f for (i,f) in enumerate(films) if liked2[i] != 0]
+    #    filtered_liked = filter(lambda l: l != 0, liked2)
+    #    results2 = compute(filtered_films, directors, actors, genres, writers, rateds, filtered_liked, len(films_list))
+    #else:
+    results2 = []
     return jsonify(results1=results1, results2=results2, films=films[-len(films_list):])
 
     
